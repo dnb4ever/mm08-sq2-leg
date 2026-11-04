@@ -1,0 +1,20 @@
+--- a/gcc/config/mips/mips.c	2026-11-04 16:32:37.606781396 -0500
++++ b/gcc/config/mips/mips.c	2026-11-04 16:32:37.618741097 -0500
+@@ -6383,8 +6383,6 @@
+ 				      GEN_INT (gp_offset - base_offset)));
+ 
+ 		RTX_UNCHANGING_P (mem_rtx) = 1;
+-		if (store_p && TARGET_MIPS5900)
+-		  MEM_VOLATILE_P (mem_rtx) = 1;
+ 
+ 		/* The mips16 does not have an instruction to load
+                    $31, so we load $7 instead, and work things out
+@@ -6599,8 +6597,6 @@
+ 						GEN_INT (fp_offset
+ 							 - base_offset)));
+ 		RTX_UNCHANGING_P (mem_rtx) = 1;
+-		if (store_p && TARGET_MIPS5900)
+-		  MEM_VOLATILE_P (mem_rtx) = 1;
+ 
+ 		if (store_p)
+ 		  {
